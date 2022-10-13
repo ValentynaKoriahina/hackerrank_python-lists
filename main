@@ -1,0 +1,49 @@
+def insert_f(i, e):
+    global a_list
+    a_list.insert(i, e)
+
+def print_f():
+    global a_list
+    print(a_list)
+
+def remove_f(e):
+    global a_list
+    a_list.remove(e)
+    
+def append_f(e):
+    global a_list
+    a_list.append(e)   
+    
+def sort_f():
+    global a_list
+    a_list.sort()   
+    
+def pop_f():
+    global a_list
+    a_list.pop()
+    
+def reverse_f():
+    global a_list
+    a_list.reverse()
+
+if __name__ == '__main__':
+    N = int(input())
+    a_list = []
+
+    for _ in range(N):
+        command, *arg = input().split()
+        arg = list(map(int, arg))
+        if command == 'insert':
+            insert_f(arg[0], arg[1])
+        elif command == 'print':
+            print_f()
+        elif command == 'remove':
+            remove_f(arg[0])
+        elif command == 'append':
+            append_f(arg[0])        
+        elif command == 'sort':
+            sort_f()
+        elif command == 'pop':
+            pop_f()        
+        elif command == 'reverse':
+            reverse_f()
